@@ -1,0 +1,81 @@
+package 
+{
+	import com.ablesky.asUi.display.SpriteUI;
+	import com.ablesky.vcore.model.vo.KeyInfo;
+	import com.ablesky.vcore.video.BytesVideo;
+	import com.ablesky.vcore.video.HttpSegmentBytesVideo;
+	import com.ablesky.vcore.video.HttpVideo;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	import flash.media.Video;
+	import flash.net.FileReference;
+	
+	/**
+	 * 工程说明,该工程为视频播放的核心,基于playList的架构
+	 * 核心是NetStream，在他之上是VideoStreamManage
+	 * NetStream分为两种Http和Bytes
+	 * ...
+	 * @author szhang
+	 */
+	public class Main extends Sprite 
+	{
+		var video:HttpSegmentBytesVideo = new HttpSegmentBytesVideo();		
+		public function Main():void 
+		{
+			if (stage) init();
+			else addEventListener(Event.ADDED_TO_STAGE, init);
+		}
+		
+		private function init(e:Event = null):void 
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, init);
+			video.play('http://192.168.3.143/LA.flv',new KeyInfo());
+			video.width = 640;
+			video.height = 360 ;
+			addChild(video);
+			//video.addEventListener(MouseEvent.CLICK, onClick);
+			 //var sp:SpriteUI = new SpriteUI();
+			 //sp.graphics.beginFill(0x00ff00, 1);
+			 //sp.graphics.drawRect(0, 0, 100, 100);
+			 //sp.graphics.endFill();
+			 //this.addChild(sp);
+			//sp.addEventListener(MouseEvent.CLICK, onClickb);
+			//
+			//video.addEventListener(MouseEvent.CLICK, onClick);
+			 //var sp2:SpriteUI = new SpriteUI();
+			 //sp2.graphics.beginFill(0x00ff00, 1);
+			 //sp2.graphics.drawRect(0, 0, 100, 100);
+			 //sp2.graphics.endFill();
+			 //this.addChild(sp2);
+			 //sp2.x = 300;
+			 //sp2.y = 300 ;
+			//sp2.addEventListener(MouseEvent.CLICK, onClickc);				
+		}
+		
+		private function onClickb(e:MouseEvent):void
+		{
+			//var file:FileReference = new FileReference();
+			//file.save(video.stream, 'aa.flv');
+		}
+		
+		private function onClickc(e:MouseEvent):void
+		{
+		//var k:KeyInfo = new KeyInfo();
+			//k.size = 8520827;
+			//k.time = 15;
+			//video.play2('http://192.168.3.143/vod/42eb461042261b4d8cfce34343763568/4e7af83f/coursecontent/2011-08-19/4cc83f32-c236-4881-8c8c-12402a7722fa.asv?start=13725925&end=16468781&k=faabfa7e43dd4dcab3362f7e006b67f6&pk=8cce3e54d21e4868a07e8e77cc472e4d', k);;			
+		}
+		
+		private function onClick(e:MouseEvent):void
+		{
+			//trace('click');
+			//var k:KeyInfo = new KeyInfo();
+			//k.size = 8520827;
+			//k.time = 15;
+			//video.play('http://192.168.3.143/vod/42eb461042261b4d8cfce34343763568/4e7af83f/coursecontent/2011-08-19/4cc83f32-c236-4881-8c8c-12402a7722fa.asv?start=13725925&end=16468781&k=faabfa7e43dd4dcab3362f7e006b67f6&pk=8cce3e54d21e4868a07e8e77cc472e4d', k);;
+		}
+		
+	}
+	
+}

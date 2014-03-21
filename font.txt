@@ -1,0 +1,8 @@
+// 网速.抬头
+.netinfo_title{ font-family:"微软雅黑", "宋体"; font-size: 12px; color: #aaaaaa;text-align: left; }
+// 网速.状态.流畅
+.netinfo_status_process {font-family:"微软雅黑", "宋体"; font-size: 12px; color: #44DDFF;text-align: left; }
+// 网速.状态.拥堵
+.netinfo_status_congestion {font-family:"微软雅黑", "宋体"; font-size: 12px; color:#FF3300;text-align: left; }
+// 网速.速率
+.netinfo_rate  {font-family:Verdana; font-size: 10px; color:#ffffff;text-align: left; }

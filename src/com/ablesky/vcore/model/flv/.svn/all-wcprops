@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv
+END
+FLVHeader.as
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv/FLVHeader.as
+END
+FLVTag.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv/FLVTag.as
+END
+FLVParser.as
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Flash/!svn/ver/349/Vcore/src/com/ablesky/vcore/model/flv/FLVParser.as
+END
+FLVParserState.as
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv/FLVParserState.as
+END
+FLVTagAudio.as
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv/FLVTagAudio.as
+END
+FLVTagScriptDataObject.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv/FLVTagScriptDataObject.as
+END
+FLVTagVideo.as
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Flash/!svn/ver/347/Vcore/src/com/ablesky/vcore/model/flv/FLVTagVideo.as
+END

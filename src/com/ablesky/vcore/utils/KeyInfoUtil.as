@@ -1,0 +1,106 @@
+﻿package com.ablesky.vcore.utils
+{
+	import com.ablesky.vcore.model.vo.KeyInfo;
+
+	public class KeyInfoUtil
+	{
+		public function KeyInfoUtil()
+		{
+			
+		}
+		/**
+		 * 
+		 * @param startKeyInfo
+		 * @param keyFrames
+		 * @return 
+		 * 用于向服务器请求距离420秒的结束为止,应该是该帧的后一帧
+		 */		
+		public static function getEndKey(startKeyInfo:KeyInfo,keyFrames:Array,distance:int=420):KeyInfo
+		{
+			
+				var endTime:Number ;
+				if(startKeyInfo != null)
+				{
+					endTime = startKeyInfo.time + 420;
+				}else
+				{
+					endTime = distance;
+				}
+				for(var i:int;i<keyFrames.length;i++)
+				{
+					if(((keyFrames[i]) as KeyInfo).time >=endTime){
+						return keyFrames[i] as KeyInfo;
+					}
+				}
+				//如果没有 大于起始时间加上420秒的文件位置，则返回文件大小
+				return keyFrames[keyFrames.length-1] as KeyInfo;
+		}
+		
+		public static function getEndKeyLength(startKeyInfo:KeyInfo,endKeyInfo:KeyInfo):Number
+		{
+			if(endKeyInfo.size < startKeyInfo.size)
+			{
+				throw new Error("You endTime must big than startTime");
+				
+			}else{
+				return endKeyInfo.size - startKeyInfo.size;
+			}
+		}
+		
+		public static function getKeyByKeySize(size:Number,keyFrames:Array):KeyInfo
+		{
+			for(var i:int;i<keyFrames.length;i++)
+			{
+				if(((keyFrames[i]) as KeyInfo).size ==size){
+					return keyFrames[i] as KeyInfo;
+				}
+			}
+			return null;
+		}
+		
+		public static function getKeyByKeyTime(time:Number,keyFrames:Array):KeyInfo
+		{
+			for(var i:int;i<keyFrames.length;i++)
+			{
+				if(((keyFrames[i]) as KeyInfo).time ==time){
+					return keyFrames[i-1] as KeyInfo;
+				}
+			}
+			return null;
+		}
+		/**
+		 * 
+		 * @param time
+		 * @param keyFrames
+		 * @return 
+		 * 用于拖拽时,找到前一帧
+		 */		
+		public static function getLastKeyByTime(time:Number,keyFrames:Array):KeyInfo
+		{
+			for(var i:int;i<keyFrames.length;i++)
+			{
+				if(((keyFrames[i]) as KeyInfo).time >=time){
+					if(i == 0)
+					{
+						var key:KeyInfo = new KeyInfo();
+						key.size = 0;
+						key.time = 0;
+						return key;
+					}
+					return keyFrames[i-1] as KeyInfo;
+				}
+			}
+			//否则返回最后一个帧
+			
+			return keyFrames[keyFrames.length-2];
+		}
+		
+        public static function getMaxKeyinfo(array:Array):KeyInfo{
+            return ((array[(array.length - 1)] as KeyInfo));
+        }
+        public static function getFirsetKeyinfo(array:Array):KeyInfo{
+            return ((array[0] as KeyInfo));
+        }				
+		
+	}
+}
